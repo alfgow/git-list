@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "./button";
 import Icon from "./icon";
-import props from "./profile-data";
 
 const ProfileStyled = styled.div`
 	grid-area: profile;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "avatar names" "bio bio" "buttons buttons" "web web" "follow follow";
+	overflow: hidden;
+	padding-block-end: 1.5rem;
+	border-bottom: 0.3px solid var(--grey-1);
 
 	.info {
 		margin: 0;
@@ -22,10 +27,19 @@ const ProfileStyled = styled.div`
 	}
 	.avatar {
 		border-radius: 50%;
-		border: 1px solid #a5c71b;
 		overflow: hidden;
 		box-sizing: border-box;
 		margin-block-end: 1.5rem;
+		grid-area: avatar;
+		block-size: 7.5rem;
+		inline-size: 7.5rem;
+	}
+	.names {
+		grid-area: names;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-inline-start: 1rem;
 	}
 	.name {
 		color: var(--white);
@@ -40,13 +54,66 @@ const ProfileStyled = styled.div`
 		margin-block-end: 1.5rem;
 	}
 	.buttons {
+		grid-area: buttons;
 		display: flex;
+		align-items: center;
 		gap: 0.5rem;
-		margin-block-end: 1.5rem;
+		margin-block: 1rem;
+	}
+	.bio {
+		grid-area: bio;
+		margin: 0;
+	}
+	.web {
+		grid-area: web;
+		margin: 0;
+	}
+	.twitterUser {
+		display: none;
+	}
+	.location {
+		display: none;
+	}
+	.followers {
+		grid-area: follow;
+		margin: 0;
+	}
+	@media screen and (min-width: 48rem) {
+		block-size: 44rem;
+		inline-size: 20rem;
+		padding-inline: 1.5rem;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(8, auto);
+		grid-template-areas: "avatar" "names" "bio" "buttons" "follow" "location" "web" "twitterUser";
+		border-bottom: none;
+		.avatar {
+			block-size: 15.875rem;
+			inline-size: 15.875rem;
+			justify-self: center;
+		}
+		.twitterUser {
+			display: block;
+			grid-area: twitterUser;
+			margin: 0;
+		}
+		.location {
+			display: flex;
+			grid-area: location;
+			margin: 0;
+			align-items: center;
+		}
+		.names {
+			padding-inline-start: 0;
+		}
+
+		.bio {
+			color: var(--white);
+		}
 	}
 `;
 
-function Profile() {
+function Profile(props) {
 	const {
 		name,
 		login,
@@ -58,13 +125,6 @@ function Profile() {
 		twitter_username,
 		blog,
 	} = props;
-	const [coolName, setCoolName] = useState(name);
-
-	useEffect(() => {
-		setTimeout(() => {
-			setCoolName("Alfonso");
-		}, 1000);
-	}, []);
 
 	return (
 		<ProfileStyled>
@@ -75,8 +135,10 @@ function Profile() {
 				alt=""
 				className="avatar"
 			/>
-			<p className="name">{coolName}</p>
-			<p className="username ">{login}</p>
+			<div className="names">
+				<p className="name">{name}</p>
+				<p className="username ">{login}</p>
+			</div>
 			<div className="buttons">
 				<Button text="Follow" link="#" />
 				<Button
@@ -100,7 +162,7 @@ function Profile() {
 				href={blog}
 				target="_blank"
 				rel="noreferrer"
-				className="info"
+				className="web info"
 			>
 				{blog}
 			</a>
@@ -108,7 +170,7 @@ function Profile() {
 				href={`https://twitter.com/${twitter_username}`}
 				target="_blank"
 				rel="noreferrer"
-				className="info"
+				className="twitterUser info"
 			>
 				@{twitter_username}
 			</a>

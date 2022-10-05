@@ -36,6 +36,8 @@ const RepoItemStyled = styled.div`
 	.topicList {
 		display: flex;
 		gap: 0.25rem;
+		overflow: hidden;
+		flex-wrap: wrap;
 	}
 	.listItem {
 		padding-block: 0.25rem;

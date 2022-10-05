@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import AlertTriangle from "./alert-triangle";
 import ArrowDown from "./arrow-down";
 import Book from "./book";
 import Branch from "./branch";
@@ -14,10 +14,11 @@ import Star from "./star";
 import Twitter from "./twitter";
 import User from "./user";
 
-const IndexStyled = styled.div``;
-
 function Index({ name, ...props }) {
 	switch (name) {
+		case "alert": {
+			return <AlertTriangle {...props} />;
+		}
 		case "arrow-down": {
 			return <ArrowDown {...props} />;
 		}
