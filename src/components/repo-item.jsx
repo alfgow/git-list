@@ -16,6 +16,7 @@ const RepoItemStyled = styled.div`
 		display: flex;
 		gap: 1rem;
 		margin: 0;
+		flex-wrap: wrap;
 		a {
 			color: var(--primary);
 			text-decoration: none;
