@@ -94,7 +94,10 @@ function RepoItem(props) {
 			{topics.length ? (
 				<div className="topicList">
 					{topics.map((item) => (
-						<span className="listItem">
+						<span
+							className="listItem"
+							key={item}
+						>
 							{item}
 						</span>
 					))}

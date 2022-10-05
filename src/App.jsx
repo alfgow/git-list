@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import Filters from "./components/filters";
 import Layout from "./components/layout";
+import Modal from "./components/modal";
 import Profile from "./components/profile";
 import RepoList from "./components/repo-list";
 import Search from "./components/search";
@@ -16,6 +17,7 @@ function App() {
 	}
 	const [user, setUser] = useState({});
 	const [repos, setRepos] = useState([]);
+	const [modal, setModal] = useState(false);
 
 	useEffect(() => {
 		getUser(userParams).then(({ data, isError }) => {
@@ -42,10 +44,11 @@ function App() {
 
 	return (
 		<Layout>
+			<Modal isActive={modal} setModal={setModal} />
 			<Profile {...user} />
 			<Filters />
 			<RepoList repoList={repos} />
-			<Search />
+			<Search setModal={setModal} />
 		</Layout>
 	);
 }

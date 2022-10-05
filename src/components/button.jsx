@@ -37,4 +37,24 @@ function Button({ text, link, className, icon }) {
 	);
 }
 
+export const ButtonContrast = styled(Button)`
+	background: var(--white);
+	color: var(--buttonBG);
+	&:hover {
+		background: var(--buttonBG);
+		color: var(--white);
+	}
+`;
+
+export const ButtonRounded = styled(Button)`
+	min-inline-size: initial;
+	border-radius: 50%;
+	padding: 0.75rem;
+	border: 1px solid #a5c71b;
+	&:hover {
+		background: var(--buttonBG);
+		transform: scale(1.1);
+	}
+`;
+
 export default Button;

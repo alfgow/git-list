@@ -10,7 +10,6 @@ async function fetchWrapper(url, options) {
 	}
 
 	const data = await response.json();
-	console.log(data);
 	return {
 		data,
 		isError: false,

@@ -27,7 +27,8 @@ const GlobalStylesStyled = createGlobalStyle`
 body {
     background: var(--bg);
     color: var(--grey);
-    font: var(--body1-regular)
+    font: var(--body1-regular);
+    margin: 0;
 }
 `;
 
