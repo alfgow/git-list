@@ -115,6 +115,9 @@ const ProfileStyled = styled.div`
 		.bio {
 			color: var(--white);
 		}
+		.username {
+			margin-block-end: 0;
+		}
 	}
 `;
 
