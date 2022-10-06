@@ -18,16 +18,36 @@ function RepoList({ repoList, search, username }) {
 		});
 		if (list.length < 1) {
 			// return <NoRepo term={search} />;
+			let timerInterval;
 			Swal.fire({
 				title: "Ups!",
 				text: `No hay resultados para tu criterio de busqueda '${search}'.`,
 				icon: "error",
 				showConfirmButton: false,
+				timer: 2000,
+				timerProgressBar: true,
+				didOpen: () => {
+					Swal.showLoading();
+					const b =
+						Swal.getHtmlContainer().querySelector(
+							"b"
+						);
+					timerInterval = setInterval(() => {
+						b.textContent =
+							Swal.getTimerLeft();
+					}, 100);
+				},
+				willClose: () => {
+					clearInterval(timerInterval);
+				},
+			}).then((result) => {
+				/* Read more about handling dismissals below */
+				if (
+					result.dismiss ===
+					Swal.DismissReason.timer
+				) {
+				}
 			});
-			setTimeout(
-				() => (window.location.href = `../${username}`),
-				3000
-			);
 
 			return;
 		}
