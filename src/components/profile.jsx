@@ -95,6 +95,7 @@ const ProfileStyled = styled.div`
 			block-size: 15.875rem;
 			inline-size: 15.875rem;
 			justify-self: center;
+			margin-block-end: 0;
 		}
 		.twitterUser {
 			display: block;
