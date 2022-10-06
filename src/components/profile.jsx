@@ -33,6 +33,7 @@ const ProfileStyled = styled.div`
 		grid-area: avatar;
 		block-size: 7.5rem;
 		inline-size: 7.5rem;
+		flex: 1;
 	}
 	.names {
 		grid-area: names;
@@ -81,12 +82,15 @@ const ProfileStyled = styled.div`
 	@media screen and (min-width: 48rem) {
 		block-size: 44rem;
 		inline-size: 20rem;
-		padding-inline: 1.5rem;
+		padding-inline-start: 1.5rem;
+		padding-inline-end: 1rem;
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: repeat(8, auto);
 		grid-template-areas: "avatar" "names" "bio" "buttons" "follow" "location" "web" "twitterUser";
 		border-bottom: none;
+		border-right: 1px solid #a5c71b;
+
 		.avatar {
 			block-size: 15.875rem;
 			inline-size: 15.875rem;

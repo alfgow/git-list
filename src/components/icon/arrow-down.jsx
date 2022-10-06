@@ -1,4 +1,4 @@
-function ArrowDown({ size, color }) {
+function ArrowDown({ size = "16", color = "white" }) {
 	return (
 		<svg
 			width={size}

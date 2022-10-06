@@ -8,6 +8,7 @@ const InputText = styled.input`
 	background: var(--bg);
 	color: #a5c71b;
 	font: var(--body2-regular);
+	flex: 1;
 `;
 
 export default InputText;
