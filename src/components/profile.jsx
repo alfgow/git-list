@@ -144,7 +144,7 @@ function Profile(props) {
 				className="avatar"
 			/>
 			<div className="names">
-				<p className="name">{name}</p>
+				<p className="name">&lt; {name} /&gt;</p>
 				<p className="username ">{login}</p>
 			</div>
 			<div className="buttons">

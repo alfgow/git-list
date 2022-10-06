@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import InputText from "./input-text.jsx";
 import Selector from "./selector.jsx";
+import Separator from "./separator.jsx";
 
 const FiltersStyled = styled.div`
 	grid-area: filters;
 	color: var(--white);
-	padding-block-end: 1rem;
-	overflow: hidden;
 
 	.count {
 		font: var(--headline2-semi-bold);
@@ -23,7 +22,10 @@ const FiltersStyled = styled.div`
 	}
 `;
 
-function Filters({ repoListCount = 100 }) {
+function Filters({ repoListCount, setSearch }) {
+	function handleChange(event) {
+		setSearch(event.target.value);
+	}
 	return (
 		<FiltersStyled>
 			<h2 className="count">
@@ -33,6 +35,7 @@ function Filters({ repoListCount = 100 }) {
 				<InputText
 					type="search"
 					placeholder="Encuentra un repositorio"
+					onChange={handleChange}
 				/>
 
 				<div className="select-list">
@@ -65,6 +68,7 @@ function Filters({ repoListCount = 100 }) {
 					</Selector>
 				</div>
 			</div>
+			<Separator />
 		</FiltersStyled>
 	);
 }

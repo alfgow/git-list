@@ -25,7 +25,7 @@ const GlobalStylesStyled = createGlobalStyle`
 --caption-medium: 500 0.75rem/1.125rem Inter; 
 }
 body {
-    background: var(--buttonBG);
+    background: #101315;
     color: var(--grey);
     font: var(--body1-regular);
     margin: 0;

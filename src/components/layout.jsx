@@ -6,7 +6,6 @@ const LayoutStyled = styled.main`
 	margin: auto;
 	padding-inline: 1.25rem;
 	padding-block: 2.5rem;
-	border: 1px solid #a5c71b;
 	background: var(--bg);
 
 	@media screen and (min-width: 48rem) {
