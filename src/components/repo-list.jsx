@@ -25,7 +25,7 @@ function RepoList({ repoList, search, username }) {
 				showConfirmButton: false,
 			});
 			setTimeout(
-				() => (window.location.href = `./${username}`),
+				() => (window.location.href = `../${username}`),
 				3000
 			);
 
