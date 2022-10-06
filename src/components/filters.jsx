@@ -19,6 +19,7 @@ const FiltersStyled = styled.div`
 	.select-list {
 		display: flex;
 		gap: 0.5rem;
+		flex-wrap: wrap;
 	}
 `;
 
