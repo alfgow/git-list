@@ -114,7 +114,7 @@ function Dropdown({ showDD, setShowDD, setSearchStack }) {
 				className={classAll}
 				onClick={handleClickDropdown}
 				id="all"
-				value="All"
+				value=""
 			>
 				All
 			</button>
