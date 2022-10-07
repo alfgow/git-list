@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import Dropdown from "./dropdown.jsx";
 import InputText from "./input-text.jsx";
-import Selector from "./selector.jsx";
+import Selector2 from "./selector2.jsx";
 import Separator from "./separator.jsx";
 
 const FiltersStyled = styled.div`
@@ -20,9 +21,28 @@ const FiltersStyled = styled.div`
 		gap: 0.5rem;
 		flex-wrap: wrap;
 	}
+	.dropDown {
+		inline-size: 100%;
+		display: flex;
+		align-items: center;
+
+		@media screen and (min-width: 61.8rem) {
+			justify-content: flex-end;
+			padding-inline-end: 4.5rem;
+		}
+	}
+	.hidden {
+		display: none;
+	}
 `;
 
-function Filters({ repoListCount, setSearch, setSearchStack }) {
+function Filters({
+	repoListCount,
+	setSearch,
+	setSearchStack,
+	showDD,
+	setShowDD,
+}) {
 	function handleChange(event) {
 		setSearch(event.target.value);
 	}
@@ -41,35 +61,27 @@ function Filters({ repoListCount, setSearch, setSearchStack }) {
 				/>
 
 				<div className="select-list">
-					<Selector
+					<Selector2
+						name="stack"
+						showDD={showDD}
+						setShowDD={setShowDD}
 						id="stackSearch"
+					></Selector2>
+					<Selector2
+						name="idioma"
+						setShowDD={setShowDD}
+					></Selector2>
+					<Selector2
+						name="tipo"
+						setShowDD={setShowDD}
+					></Selector2>
+				</div>
+				<div className="dropDown">
+					<Dropdown
+						showDD={showDD}
+						setShowDD={setShowDD}
 						setSearchStack={setSearchStack}
-					>
-						<option value="">Stack </option>
-						<option value="JavaScript">
-							JavaScript
-						</option>
-						<option value="HTML">
-							HTML
-						</option>
-						<option value="CSS">CSS</option>
-					</Selector>
-					<Selector>
-						<option
-							value="language"
-							disabled
-						>
-							Idioma{" "}
-						</option>
-						<option value="spanish">
-							Español
-						</option>
-					</Selector>
-					<Selector>
-						<option value="sort">
-							Clasificacion{" "}
-						</option>
-					</Selector>
+					/>
 				</div>
 			</div>
 			<Separator />

@@ -14,6 +14,13 @@ const SelectorStyled = styled.select`
 	background-image: url(${dropDown});
 	background-repeat: no-repeat;
 	background-position: right 1.2rem center;
+	option {
+		background: #212730;
+		color: var(--grey-2);
+		&:active {
+			background: #19222d;
+		}
+	}
 `;
 
 function Selector({ id, children, setSearchStack }) {

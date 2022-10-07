@@ -20,6 +20,7 @@ function App() {
 	const [modal, setModal] = useState(false);
 	const [search, setSearch] = useState("");
 	const [searchStack, setSearchStack] = useState("");
+	const [showDD, setShowDD] = useState("hidden");
 
 	useEffect(() => {
 		getUser(userParams).then(({ data, isError }) => {
@@ -52,6 +53,8 @@ function App() {
 				setSearchStack={setSearchStack}
 				setSearch={setSearch}
 				repoListCount={repos.length}
+				showDD={showDD}
+				setShowDD={setShowDD}
 			/>
 			<RepoList
 				searchStack={searchStack}
