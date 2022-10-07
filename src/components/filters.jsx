@@ -22,10 +22,11 @@ const FiltersStyled = styled.div`
 	}
 `;
 
-function Filters({ repoListCount, setSearch }) {
+function Filters({ repoListCount, setSearch, setSearchStack }) {
 	function handleChange(event) {
 		setSearch(event.target.value);
 	}
+
 	return (
 		<FiltersStyled>
 			<h2 className="count">
@@ -36,16 +37,22 @@ function Filters({ repoListCount, setSearch }) {
 					type="search"
 					placeholder="Encuentra un repositorio"
 					onChange={handleChange}
+					id="inputSearch"
 				/>
 
 				<div className="select-list">
-					<Selector>
-						<option value="" disabled>
-							Tipo{" "}
+					<Selector
+						id="stackSearch"
+						setSearchStack={setSearchStack}
+					>
+						<option value="">Stack </option>
+						<option value="JavaScript">
+							JavaScript
 						</option>
-						<option value="All">
-							Todos
+						<option value="HTML">
+							HTML
 						</option>
+						<option value="CSS">CSS</option>
 					</Selector>
 					<Selector>
 						<option
@@ -56,9 +63,6 @@ function Filters({ repoListCount, setSearch }) {
 						</option>
 						<option value="spanish">
 							Español
-						</option>
-						<option value="english">
-							Inglés
 						</option>
 					</Selector>
 					<Selector>

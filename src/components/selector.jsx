@@ -16,8 +16,11 @@ const SelectorStyled = styled.select`
 	background-position: right 1.2rem center;
 `;
 
-function Selector({ children }) {
-	return <SelectorStyled>{children}</SelectorStyled>;
+function Selector({ id, children, setSearchStack }) {
+	function onChange(event) {
+		setSearchStack(event.target.value);
+	}
+	return <SelectorStyled onChange={onChange}>{children}</SelectorStyled>;
 }
 
 export default Selector;

@@ -9,10 +9,10 @@ const RepoListStyled = styled.div`
 	gap: 2rem;
 `;
 
-function RepoList({ repoList, search, username }) {
+function RepoList({ repoList, search, username, searchStack }) {
 	let list = repoList;
 
-	if (search !== "") {
+	function searchRepo() {
 		list = list.filter((item) => {
 			return item.name.search(search) >= 0;
 		});
@@ -51,6 +51,17 @@ function RepoList({ repoList, search, username }) {
 
 			return;
 		}
+	}
+
+	if (search !== "") {
+		searchRepo();
+	}
+
+	if (searchStack !== "") {
+		// let data;
+		// data = list.filter((item) => item.language === searchStack);
+
+		list = list.filter((item) => item.language === searchStack);
 	}
 
 	return (
