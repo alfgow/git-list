@@ -60,7 +60,6 @@ const ProfileStyled = styled.div`
 		align-items: center;
 		gap: 0.5rem;
 		margin-block: 1rem;
-		border: 1px solid #a5c71b;
 	}
 	.bio {
 		grid-area: bio;
@@ -111,6 +110,7 @@ const ProfileStyled = styled.div`
 		}
 		.names {
 			padding-inline-start: 0;
+			align-items: center;
 		}
 
 		.bio {

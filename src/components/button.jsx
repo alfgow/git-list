@@ -15,6 +15,7 @@ const ButtonStyled = styled.button`
 	justify-content: center;
 	padding-block: 0.25rem;
 	font: var(--button);
+	flex: 1;
 	&:hover {
 		background: var(--white);
 		color: var(--buttonBG);
