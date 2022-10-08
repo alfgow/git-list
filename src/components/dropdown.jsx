@@ -11,6 +11,8 @@ const DropdownStyled = styled.div`
 	border: 1px solid #a5c71b;
 	border-radius: 0.5rem;
 	overflow: hidden;
+	margin-inline-start: 5rem;
+	grid-area: dropdown;
 
 	* {
 		padding: 1rem;

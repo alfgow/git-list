@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import Dropdown from "./dropdown.jsx";
-import InputText from "./input-text.jsx";
-import Selector2 from "./selector2.jsx";
-import Separator from "./separator.jsx";
+import Dropdown from "./dropdown";
+import InputText from "./input-text";
+import Selector2 from "./selector2";
+import Separator from "./separator";
 
 const FiltersStyled = styled.div`
 	grid-area: filters;
 	color: var(--white);
 	display: grid;
+	column-gap: 1rem;
 	grid-template-columns: auto;
 	grid-template-rows: repeat(3, auto);
 	grid-template-areas: "count" "searchBar" "actionBar";
@@ -41,19 +42,23 @@ const FiltersStyled = styled.div`
 		inline-size: 100%;
 		display: flex;
 		align-items: center;
+		padding-block-start: 1rem;
 
-		@media screen and (min-width: 61.8rem) {
-			justify-content: flex-end;
+		@media screen and (min-width: 64rem) {
+			inline-size: 100%;
 			padding-inline-end: 4.5rem;
+			padding-block-start: 0.5rem;
+
+			grid-column: 1/3;
 		}
 	}
 	.hidden {
 		display: none;
 	}
-	@media screen and (min-width: 62rem) {
-		grid-template-columns: repeat(2, 1fr);
+	@media screen and (min-width: 64rem) {
+		grid-template-columns: 13rem 1fr;
 		grid-template-rows: repeat(2, 1fr);
-		grid-template-areas: "count count" "searchBar actionBar";
+		grid-template-areas: "count searchBar" "actionBar actionBar";
 	}
 `;
 
@@ -96,13 +101,14 @@ function Filters({
 					name="tipo"
 					setShowDD={setShowDD}
 				></Selector2>
-				<div className="dropDown">
-					<Dropdown
-						showDD={showDD}
-						setShowDD={setShowDD}
-						setSearchStack={setSearchStack}
-					/>
-				</div>
+			</div>
+
+			<div className="dropDown">
+				<Dropdown
+					showDD={showDD}
+					setShowDD={setShowDD}
+					setSearchStack={setSearchStack}
+				/>
 			</div>
 			<Separator />
 		</FiltersStyled>

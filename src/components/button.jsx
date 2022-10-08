@@ -31,7 +31,12 @@ function Button({ text, link, className, icon }) {
 		}
 	}
 	return (
-		<ButtonStyled as={component} href={link} className={className}>
+		<ButtonStyled
+			as={component}
+			href={link}
+			className={className}
+			target="_blank"
+		>
 			{iconComponent}
 			{text}
 		</ButtonStyled>

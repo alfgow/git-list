@@ -149,7 +149,10 @@ function Profile(props) {
 				<p className="username ">{login}</p>
 			</div>
 			<div className="buttons">
-				<Button text="Follow" link="#" />
+				<Button
+					text="Follow"
+					link={`https://twitter.com/${twitter_username}`}
+				/>
 				<Button
 					text="Sponsor"
 					icon={
@@ -159,6 +162,7 @@ function Profile(props) {
 							color="red"
 						/>
 					}
+					link="https://www.buymeacoffee.com/alfgow"
 				/>
 			</div>
 			<p className="bio info">{bio}</p>
