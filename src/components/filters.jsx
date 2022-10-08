@@ -7,19 +7,35 @@ import Separator from "./separator.jsx";
 const FiltersStyled = styled.div`
 	grid-area: filters;
 	color: var(--white);
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "count" "searchBar" "actionBar";
 
 	.count {
 		font: var(--headline2-semi-bold);
+		grid-area: count;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		margin-block-start: 1rem;
+		margin-block-end: 0.5rem;
 	}
 	.action-list {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
+		grid-area: searchBar;
+		padding-block: 0.5rem;
+		margin-block-end: 0.5rem;
 	}
 	.select-list {
 		display: flex;
 		gap: 0.5rem;
+		align-items: center;
 		flex-wrap: wrap;
+		grid-area: actionBar;
 	}
 	.dropDown {
 		inline-size: 100%;
@@ -33,6 +49,11 @@ const FiltersStyled = styled.div`
 	}
 	.hidden {
 		display: none;
+	}
+	@media screen and (min-width: 62rem) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas: "count count" "searchBar actionBar";
 	}
 `;
 
@@ -59,23 +80,22 @@ function Filters({
 					onChange={handleChange}
 					id="inputSearch"
 				/>
-
-				<div className="select-list">
-					<Selector2
-						name="stack"
-						showDD={showDD}
-						setShowDD={setShowDD}
-						id="stackSearch"
-					></Selector2>
-					<Selector2
-						name="idioma"
-						setShowDD={setShowDD}
-					></Selector2>
-					<Selector2
-						name="tipo"
-						setShowDD={setShowDD}
-					></Selector2>
-				</div>
+			</div>
+			<div className="select-list">
+				<Selector2
+					name="stack"
+					showDD={showDD}
+					setShowDD={setShowDD}
+					id="stackSearch"
+				></Selector2>
+				<Selector2
+					name="idioma"
+					setShowDD={setShowDD}
+				></Selector2>
+				<Selector2
+					name="tipo"
+					setShowDD={setShowDD}
+				></Selector2>
 				<div className="dropDown">
 					<Dropdown
 						showDD={showDD}

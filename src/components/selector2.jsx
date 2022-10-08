@@ -15,6 +15,7 @@ const Selector2Styled = styled.button`
 	background-repeat: no-repeat;
 	background-position: right 1.2rem center;
 	cursor: pointer;
+	flex: 1;
 	&:active {
 		transform: (1.1);
 	}
