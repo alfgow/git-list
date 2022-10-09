@@ -1,8 +1,10 @@
 import { CircleLoader } from "react-spinners";
 import styled from "styled-components";
+import alfgow from "./img/alfgow.png";
 
 const LoaderStyled = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	block-size: 100vh;
@@ -12,6 +14,7 @@ const LoaderStyled = styled.div`
 		margin: auto;
 		padding-inline: 1.25rem;
 		padding-block: 2.5rem;
+		margin-inline-start: 7rem;
 	}
 `;
 
@@ -25,6 +28,7 @@ function Loader({ loading }) {
 				aria-label="Loading Spinner"
 				data-testid="loader"
 			/>
+			<img src={alfgow} alt="" />
 		</LoaderStyled>
 	);
 }
