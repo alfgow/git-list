@@ -21,6 +21,14 @@ function App() {
 	const [search, setSearch] = useState("");
 	const [searchStack, setSearchStack] = useState("");
 	const [showDD, setShowDD] = useState("hidden");
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 1000);
+	}, []);
 
 	useEffect(() => {
 		getUser(userParams).then(({ data, isError }) => {
@@ -46,7 +54,7 @@ function App() {
 	}, [userParams]);
 
 	return (
-		<Layout>
+		<Layout loading={loading} setLoading={setLoading}>
 			<Modal isActive={modal} setModal={setModal} />
 			<Profile {...user} />
 			<Filters

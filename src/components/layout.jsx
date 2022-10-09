@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Loader from "./loader";
 
 const LayoutStyled = styled.main`
 	min-block-size: 100vh;
@@ -17,8 +18,12 @@ const LayoutStyled = styled.main`
 	}
 `;
 
-function Layout({ children }) {
-	return <LayoutStyled>{children}</LayoutStyled>;
+function Layout({ children, loading }) {
+	return (
+		<LayoutStyled>
+			{loading ? <Loader {...loading} /> : [children]}
+		</LayoutStyled>
+	);
 }
 
 export default Layout;
