@@ -1,4 +1,4 @@
-import { ClipLoader } from "react-spinners";
+import { CircleLoader } from "react-spinners";
 import styled from "styled-components";
 
 const LoaderStyled = styled.div`
@@ -6,13 +6,19 @@ const LoaderStyled = styled.div`
 	justify-content: center;
 	align-items: center;
 	block-size: 100vh;
-	inline-size: 100vh;
+	@media screen and (min-width: 48rem) {
+		block-size: 100vh;
+		inline-size: 100vh;
+		margin: auto;
+		padding-inline: 1.25rem;
+		padding-block: 2.5rem;
+	}
 `;
 
 function Loader({ loading }) {
 	return (
 		<LoaderStyled>
-			<ClipLoader
+			<CircleLoader
 				color="#b5ff08"
 				loading={loading}
 				size={150}
