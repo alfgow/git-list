@@ -8,6 +8,7 @@ const LoaderStyled = styled.div`
 	justify-content: center;
 	align-items: center;
 	block-size: 100vh;
+
 	@media screen and (min-width: 48rem) {
 		block-size: 100vh;
 		inline-size: 100vh;
@@ -15,6 +16,9 @@ const LoaderStyled = styled.div`
 		padding-inline: 1.25rem;
 		padding-block: 2.5rem;
 		margin-inline-start: 7rem;
+	}
+	.imgLoader {
+		inline-size: 30rem;
 	}
 `;
 
@@ -28,7 +32,8 @@ function Loader({ loading }) {
 				aria-label="Loading Spinner"
 				data-testid="loader"
 			/>
-			<img src={alfgow} alt="" />
+
+			<img src={alfgow} alt="" className="imgLoader" />
 		</LoaderStyled>
 	);
 }
