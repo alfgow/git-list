@@ -10,12 +10,9 @@ const LoaderStyled = styled.div`
 	block-size: 100vh;
 	overflow: hidden;
 	@media screen and (min-width: 48rem) {
-		block-size: 100vh;
-		inline-size: 100vh;
-		margin: auto;
-		padding-inline: 1.25rem;
-		padding-block: 2.5rem;
-		margin-inline-start: 7rem;
+		flex-direction: row;
+		padding-inline: 10rem;
+		flex-wrap: wrap;
 	}
 	.imgLoader {
 		inline-size: 30rem;

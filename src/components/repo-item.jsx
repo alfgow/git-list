@@ -84,7 +84,13 @@ function RepoItem(props) {
 	return (
 		<RepoItemStyled>
 			<h3 className="title">
-				<a href={html_url}>{name}</a>
+				<a
+					href={html_url}
+					target="_blank"
+					rel="noreferrer"
+				>
+					{name}
+				</a>
 				{!props.private ? (
 					<span className="public">Public</span>
 				) : null}
