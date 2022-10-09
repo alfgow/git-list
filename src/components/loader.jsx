@@ -8,7 +8,7 @@ const LoaderStyled = styled.div`
 	justify-content: center;
 	align-items: center;
 	block-size: 100vh;
-
+	overflow: hidden;
 	@media screen and (min-width: 48rem) {
 		block-size: 100vh;
 		inline-size: 100vh;
