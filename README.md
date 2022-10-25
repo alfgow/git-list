@@ -1,3 +1,5 @@
+<img src='https://raw.githubusercontent.com/alfgow/git-list/master/src/components/img/alfgow.png'/>
+
 ### Git-List: React Poryect ⚛️
 
 Realicé éste proyecto con el <a href='https://leonidasesteban.com/cursos/react' target='_blank' rel="noreferrer">curso de React</a> de Leonidas Esteban
